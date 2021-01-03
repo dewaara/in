@@ -11,12 +11,6 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>MdHalim | Portfolio</title>
-
-       <!-- add icon link -->
-        <link rel = "icon" href =  
-"https://firebasestorage.googleapis.com/v0/b/portfolio-ac101.appspot.com/o/mdh.ico?alt=media&token=7507c992-7fcc-44ea-9a80-162fa99456ea" 
-        type = "image/x-icon"> 
-
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -88,7 +82,7 @@
                         <h3 class="skills__subtitle">Android Development</h3>
                         <span class="skills__name">Java</span>
                         <span class="skills__name">Kotlin</span>
-                        <span class="skills__name">Firebse</span>
+                        <span class="skills__name">Firebase</span>
                         <span class="skills__name">MySQL</span>
                       
                         <h3 class="skills__subtitle">UI Designer</h3>
@@ -176,13 +170,13 @@
                         <span class="contact__text">Dhanbad,Jharkhand | India</span>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <form action="" class="contact__form" id="displayForm1">
                         <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="mail" placeholder="Email" class="contact__input">
+                            <input type="text" placeholder="Name" id="Name" class="contact__input">
+                            <input type="mail" placeholder="Email" id="Email" class="contact__input">
                         </div>
 
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="" id="Message" cols="0" rows="10" class="contact__input"></textarea>
 
                         <input type="submit" value="Sent" class="contact__button">
                     </form>
@@ -232,9 +226,24 @@
        <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyAtMGXw4RRyj3H1ToD-mZooyCc6SB8sKzY",
+                authDomain: "portfolio-ac101.firebaseapp.com",
+                databaseURL: "https://portfolio-ac101-default-rtdb.firebaseio.com",
+                projectId: "portfolio-ac101",
+                storageBucket: "portfolio-ac101.appspot.com",
+                messagingSenderId: "40830767873",
+                appId: "1:40830767873:web:458083bc0b27499ee30100",
+                measurementId: "G-QG0F2EE290"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+        </script>
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>

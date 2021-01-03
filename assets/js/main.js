@@ -1,16 +1,39 @@
- var firebaseConfig = {
-    apiKey: "AIzaSyAtMGXw4RRyj3H1ToD-mZooyCc6SB8sKzY",
-    authDomain: "portfolio-ac101.firebaseapp.com",
-    databaseURL: "https://portfolio-ac101-default-rtdb.firebaseio.com",
-    projectId: "portfolio-ac101",
-    storageBucket: "portfolio-ac101.appspot.com",
-    messagingSenderId: "40830767873",
-    appId: "1:40830767873:web:458083bc0b27499ee30100",
-    measurementId: "G-QG0F2EE290"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+ var contactRef = firebase.database().ref().child("contactForm");
+
+ document.getElementById('displayForm1').addEventListener('submit',submitForm);
+
+
+
+function submitForm(e){
+
+    e.preventDefault();
+
+    var Name = getInputVal('Name');
+        var Email = getInputVal('Email');
+            var Name = getInputVal('Name');
+                var Message = getInputVal('Message');
+
+                saveForm(Name,Email,Message);
+
+                document.getElementById('displayForm1').reset();
+
+
+}
+
+function getInputVal(id){
+    return document.getElementById(id).value;
+}
+
+function saveForm(Name,Email,Message){
+    var newContactRef = contactRef.push();
+    newContactRef.set({
+
+        Name :Name,
+        Email: Email,
+        Message: Message
+    });
+}
+
 
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
